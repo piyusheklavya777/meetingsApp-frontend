@@ -2,12 +2,13 @@ import React, { Component } from 'react';
 import './App.css';
 import { Route, withRouter } from 'react-router-dom'
 
+
 import Navbar from './Navbar'
 import Calendar from './Calendar'
 import Meetings from './Meetings'
 import Signup from './Signup'
 
-import {loginService} from '../services/services'
+import {loginService, calendarService} from '../services/services'
 
 const MeetingswithRouter = withRouter(Meetings)
 const NavbarwithRouter = withRouter(Navbar)
@@ -24,23 +25,26 @@ class App extends Component {
     this.logout = this.logout.bind(this)
   }
 
- async login() {
-    let userdata =  await loginService()
+ async login(email,pwd) {
+    let userdata =  await loginService(email,pwd)
 
     if(userdata && !this.state.loggedinornot) {
       
     localStorage.setItem("meetingsAppToken", userdata.token);
-    console.log(localStorage.getItem("meetingsAppToken"))
+    //console.log(localStorage.getItem("meetingsAppToken"))
+
+
       this.setState({
         loggedinornot : true,
         email : userdata.user.email,
         name  : userdata.user.name
       })
     }
-    console.log('seedata',userdata)
+    
   }
 
   logout() {
+
     if(this.state.loggedinornot) {
 
       localStorage.removeItem("meetingsAppToken")
@@ -65,7 +69,7 @@ class App extends Component {
             <Signup />
          </Route>
          <Route path="/calendar">
-            <Calendar/>
+            <Calendar />
          </Route>
          <Route path="/meetings" component={MeetingswithRouter}/>
          

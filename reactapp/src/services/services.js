@@ -1,27 +1,37 @@
 import axios from 'axios'
-
-const baseurl = 'http://localhost:3000/api'
+const protocol = 'http'
+const url = 'localhost:3000/api'
+const baseurl = protocol+'://'+url
 
 const loginService = (email, password) => {
 
     let loginobj = {
-        email : "andyy@telstra.com",
-        password : "andy123"
+        email : email,
+        password : password
+    }
+    let andy = {
+        email: 'andy@telstra.com',
+        password: 'andy123'
     }
     return axios.post( 
         `${baseurl}/login`,
-        loginobj, 
+        loginobj.email && loginobj.password?loginobj:andy, 
         {
             headers: {}
         }
     ).then(response => response.data)
 }
 
-export {
-    loginService
+const calendarService = (date) => {
+     console.log('date in service',date)
+     
+    return axios.get(`${baseurl}/calendar`,{params:{MeetingDate:date} ,headers: { Authorization:localStorage.getItem('meetingsAppToken') } })
+     .then(response => response.data)
+     .catch(error => console.log(error));
+   
 }
 
-// axios.post('http://yourendpoint',data,{ headers: { Authorization:localStorage.getItem('jwtToken') } })
-//             .then(response=> console.log(response))
-//             .catch(error => console.log(error));
-//    };
+export {
+    loginService,
+    calendarService
+}

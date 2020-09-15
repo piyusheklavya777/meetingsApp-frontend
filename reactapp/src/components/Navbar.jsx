@@ -10,15 +10,37 @@ const CalendarwithRouter = withRouter(Calendar)
 
 class Navbar extends Component {
 
+    constructor() {
+        super()
+        this.state={
+            email: '',
+            password: ''
+        }
+        this.onWriteEmail = this.onWriteEmail.bind(this)
+        this.onWritePassword = this.onWritePassword.bind(this)
+      }
+    
+
+    onWriteEmail(evt) {
+        this.setState({
+            email: evt.target.value
+        })
+    }
+    onWritePassword(evt) {
+        this.setState({
+            password: evt.target.value
+        })
+    }
+
     render(props) {
 
-        const loginHelper = this.props.login
+        const loginHelper = () => this.props.login(this.state.email, this.state.password)
         const logoutHelper = this.props.logout
 
         let topNavGuest = (
             <>
-            <input type="text" name="emailtext" placeholder="email" className="nav-top-input"/>
-            <input type="password" name="passwordtext" placeholder="password" className="nav-top-input"/>
+            <input type="text" name="emailtext" placeholder="email" className="nav-top-input" onChange={this.onWriteEmail} value={this.state.email} />
+            <input type="password" name="passwordtext" placeholder="password" className="nav-top-input" onChange={this.onWritePassword} value={this.state.password} />
             <input type="button" onClick={loginHelper} value="login"/>
             </>     
         )
@@ -33,10 +55,7 @@ class Navbar extends Component {
         return (
             <div className="container">
                 <div className="top">
-                    
-                        {this.props.loggedinornot?topNavUser:topNavGuest}
-                            
-                    
+                        {this.props.loggedinornot?topNavUser:topNavGuest}                   
                 </div>
                 <div className="bottom">
                     <ul>
