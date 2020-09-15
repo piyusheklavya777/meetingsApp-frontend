@@ -6,6 +6,13 @@ import Showmeetings from './Showmeetings'
 
 
 class Meetings extends Component {
+
+    constructor() {
+        this.state= {
+            meetings:null
+        }
+    }
+
     render() {
         return (
             <div>

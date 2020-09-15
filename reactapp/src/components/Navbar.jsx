@@ -53,7 +53,7 @@ class Navbar extends Component {
           )
 
         return (
-            <div className="container">
+            <div className="container-navbar">
                 <div className="top">
                         {this.props.loggedinornot?topNavUser:topNavGuest}                   
                 </div>

@@ -31,7 +31,24 @@ const calendarService = (date) => {
    
 }
 
+// const meetingsService = (date) => {
+   
+//    return axios.get(`${baseurl}/calendar`,{params:{MeetingDate:date} ,headers: { Authorization:localStorage.getItem('meetingsAppToken') } })
+//     .then(response => response.data)
+//     .catch(error => console.log(error));
+  
+// }
+
+const signupService = (data) => {
+   
+    return axios.post(`${baseurl}/signup`,data )
+     .then(response => response.data )
+     .catch(error => console.log(error));
+   
+ }
+
 export {
     loginService,
-    calendarService
+    calendarService,
+    signupService
 }
