@@ -8,7 +8,7 @@ import Calendar from './Calendar'
 import Meetings from './Meetings'
 import Signup from './Signup'
 
-import {loginService, calendarService} from '../services/services'
+import {loginService, calendarService, getAllUsersService} from '../services/services'
 
 const MeetingswithRouter = withRouter(Meetings)
 const NavbarwithRouter = withRouter(Navbar)
@@ -19,7 +19,8 @@ class App extends Component {
     this.state= {
       loggedinornot : false,
       email: '',
-      name: ''
+      name: '',
+      allUsers: []
     }
     this.login = this.login.bind(this)
     this.logout = this.logout.bind(this)
@@ -32,15 +33,22 @@ class App extends Component {
       
     localStorage.setItem("meetingsAppToken", userdata.token);
     //console.log(localStorage.getItem("meetingsAppToken"))
-
-
-      this.setState({
+        this.setState({
         loggedinornot : true,
         email : userdata.user.email,
         name  : userdata.user.name
       })
     }
     
+  }
+
+  async getusers() {
+    await getAllUsersService().then(res => {
+      this.setState({
+        ...this.state,
+        allUsers: res
+      },console.log(this.state))
+    })
   }
 
   logout() {

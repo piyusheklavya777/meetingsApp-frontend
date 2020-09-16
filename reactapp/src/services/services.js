@@ -43,7 +43,7 @@ const meetingsService = (obj) => {
 const getAllUsersService = (obj) => {
    
     return axios.get(`${baseurl}/users`,)
-     .then(response => {console.log(response.data); return response.data} )
+     .then(response => response.data )
      .catch(error => console.log(error));
    
  }
@@ -65,8 +65,8 @@ const signupService = (data) => {
 
  const addmeetingService = (meetingObj) => {
 
-    return axios.post(`${baseurl}/meetings/leaveme`,meetingObj,{headers: { Authorization:localStorage.getItem('meetingsAppToken') }} )
-    .then(response => response.data )
+    return axios.post(`${baseurl}/meetings`,meetingObj,{headers: { Authorization:localStorage.getItem('meetingsAppToken') }} )
+    .then(response => console.log(response.data) )
     .catch(error => console.log(error))
  }
 
