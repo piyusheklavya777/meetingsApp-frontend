@@ -2,9 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { calendarService } from '../services/services';
 import DatePicker from 'react-date-picker';
 
+import './Calendar.css'
+
 function Calendar() {
     const [meetings, setMeetings] = useState(null);
     const[date, setDate] = useState((new Date()))
+
+    
 
     useEffect(()=> {
       fetchData()
@@ -19,11 +23,12 @@ function Calendar() {
 
     return (
         <div className="calendar-container">
-          <h1>Calendar</h1>
+          <p className="calendar-header-text">Calendar</p>
+          <hr/>
     
       <div>
-        <button className="fetch-button" onClick={fetchData}>
-          Select date
+        <button className="calendar-selectdate-btn" onClick={fetchData}>
+          Select Date
         </button>
       </div>
       <div>

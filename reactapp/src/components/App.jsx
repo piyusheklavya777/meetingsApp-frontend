@@ -65,13 +65,15 @@ class App extends Component {
          <Route path="/">
             <NavbarwithRouter loggedinornot={this.state.loggedinornot} name={this.state.name} login={this.login} logout={this.logout} />
          </Route>
-         <Route path="/" exact>
-            <Signup />
-         </Route>
-         <Route path="/calendar">
-            <Calendar />
-         </Route>
-         <Route path="/meetings" component={MeetingswithRouter}/>
+         <div className="body-container">
+            <Route path="/" exact>
+                <Signup />
+            </Route>
+            <Route path="/calendar">
+                <Calendar />
+            </Route>
+            <Route path="/meetings" component={MeetingswithRouter}/>
+         </div>
          
       </div>
     );

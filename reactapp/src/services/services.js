@@ -30,14 +30,23 @@ const calendarService = (date) => {
      .catch(error => console.log(error));
    
 }
+//{ date:date, search_terms: search_terms } //date, search_terms
 
-// const meetingsService = (date) => {
+const meetingsService = (obj) => {
    
-//    return axios.get(`${baseurl}/calendar`,{params:{MeetingDate:date} ,headers: { Authorization:localStorage.getItem('meetingsAppToken') } })
-//     .then(response => response.data)
-//     .catch(error => console.log(error));
+   return axios.get(`${baseurl}/meetings`,{params: obj, headers: { Authorization:localStorage.getItem('meetingsAppToken') } })
+    .then(response => response )
+    .catch(error => console.log(error));
   
-// }
+}
+
+const getAllUsersService = (obj) => {
+   
+    return axios.get(`${baseurl}/users`,)
+     .then(response => {console.log(response.data); return response.data} )
+     .catch(error => console.log(error));
+   
+ }
 
 const signupService = (data) => {
    
@@ -47,8 +56,27 @@ const signupService = (data) => {
    
  }
 
+ const excusemyselfService = (meetingId) => {
+
+    return axios.post(`${baseurl}/meetings/leaveme`,{meetingId: meetingId},{headers: { Authorization:localStorage.getItem('meetingsAppToken') }} )
+    .then(response => response.data )
+    .catch(error => console.log(error))
+ }
+
+ const addmeetingService = (meetingObj) => {
+
+    return axios.post(`${baseurl}/meetings/leaveme`,meetingObj,{headers: { Authorization:localStorage.getItem('meetingsAppToken') }} )
+    .then(response => response.data )
+    .catch(error => console.log(error))
+ }
+
 export {
     loginService,
     calendarService,
-    signupService
+    signupService,
+    meetingsService,
+    getAllUsersService,
+    excusemyselfService,
+    addmeetingService
+    
 }

@@ -3,11 +3,13 @@ import {Route, Switch, Link} from 'react-router-dom'
 
 import Addmeeting from './Addmeeting'
 import Showmeetings from './Showmeetings' 
+import './Meetings.css'
 
 
 class Meetings extends Component {
 
-    constructor() {
+    constructor(props) {
+        super(props)
         this.state= {
             meetings:null
         }
@@ -18,9 +20,9 @@ class Meetings extends Component {
             <div>
                 <div>
                 <base href="..." />
-                    <Link to={this.props.match.url}>show meetings</Link>
-                    <br/>
-                    <Link to={`${this.props.match.url}/add`}> Add meeting</Link>
+                    <Link to={this.props.match.url} className="meetings-show-all-meetings" >Showing all meetings</Link>
+                    
+                    <Link to={`${this.props.match.url}/add`} className="meetings-add-meetings" > Add meeting</Link>
                 </div> <hr/>
                 <div>
                     <Switch>

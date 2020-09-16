@@ -1,0 +1,121 @@
+.searchterms-input {
+
+    border: none;
+    background: rgb(245, 245, 245);
+    border-bottom: 5px solid orange;
+    height: 25px;
+
+    margin-bottom:20px ;
+
+    
+}
+
+.meetings-grid-container {
+  margin-top: 40px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 20px;
+}
+
+.meetings-card {
+  padding:20px;
+  border: 2px solid rgba(255, 198, 92,0.5); border-radius: 5px;
+}
+.meetings-card ul {
+  margin: 50px 10px;
+  list-style-type: none;
+  display: inline;
+}
+
+.leave-me-out-btn {
+  margin: 0 auto;
+
+  height: 28px; width: 100px; background: rgb(37, 88, 241); color: white;
+
+  border:none; border-radius: 5px;
+}
+
+.meeting-title {
+  color: orange;
+  font-size: 15px;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+}
+
+.meeting-description {
+  color: rgb(111, 111, 111);
+  font-size: 10px;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+}
+
+
+
+
+
+.filter-container {
+    background: rgb(255, 213, 151); 
+    padding: 20px;   
+    
+}
+
+
+.filter-container a {
+    text-decoration: none;
+  }
+  
+  .filter-container nav {
+      font-family: monospace;
+  }
+  
+  .filter-container ul {
+    background: darkorange;
+      list-style: none;
+      margin: 0;
+      padding-left: 0;
+  }
+  
+  .filter-container li {
+      color: #fff;
+    background: darkorange;
+      display: block;
+      float: left;
+      padding: 1rem;
+      position: relative;
+      text-decoration: none;
+    transition-duration: 0.5s;
+  }
+    
+  .filter-container li a {
+    color: #fff;
+  }
+  
+  .filter-container li:hover {
+      background: red;
+      cursor: pointer;
+  }
+  
+  .filter-container ul li ul {
+      background: orange;
+      visibility: hidden;
+    opacity: 0;
+    min-width: 5rem;
+      position: absolute;
+    transition: all 0.5s ease;
+    margin-top: 1rem;
+      left: 0;
+    display: none;
+  }
+  
+  .filter-container ul li:hover > ul,
+  .filter-container ul li ul:hover {
+    visibility: visible;
+    opacity: 1;
+    display: block;
+  }
+  
+  .filter-container ul li ul li {
+      clear: both;
+    width: 100%;
+  }

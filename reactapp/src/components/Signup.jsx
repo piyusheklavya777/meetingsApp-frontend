@@ -92,27 +92,27 @@ class Signup extends Component {
         return (
 
             <div class="login-page">
-            <div class="form">
-            <form class="login-form" onSubmit={this.signup} >
+                <div class="form">
+                <form class="login-form" onSubmit={this.signup} >
 
-                <input type="text" placeholder="name" name="name" value={name} onChange={this.updateValue}/>
-                {nameErr.map( err => <small class="text-danger">{err}</small> )}
+                    <input type="text" placeholder="name" name="name" value={name} onChange={this.updateValue}/>
+                    {nameErr.map( err => <small class="text-danger">{err}</small> )}
 
-                <input type="text" placeholder="email" name="email" value={email} onChange={this.updateValue} />
-                {emailErr.map( err => <small class="text-danger">{err}</small> )}
+                    <input type="text" placeholder="email" name="email" value={email} onChange={this.updateValue} />
+                    {emailErr.map( err => <small class="text-danger">{err}</small> )}
 
-                <input type="password" placeholder="password" name="password" value={password} onChange={this.updateValue}/>
-                {passwordErr.map( err => <small class="text-danger">{err}</small> )}
+                    <input type="password" placeholder="password" name="password" value={password} onChange={this.updateValue}/>
+                    {passwordErr.map( err => <small class="text-danger">{err}</small> )}
 
-                <input type="password" placeholder="confirm password"  name="confirmPassword" value={confirmPassword} onChange={this.updateValue}/>
-                {confirmPasswordErr.map( err => <small class="text-danger">{err}</small> )}
+                    <input type="password" placeholder="confirm password"  name="confirmPassword" value={confirmPassword} onChange={this.updateValue}/>
+                    {confirmPasswordErr.map( err => <small class="text-danger">{err}</small> )}
 
-                <button type="submit" className="btn btn-primary mr-2" disabled={!this.state.isValid} >sign up</button>
-                <p class="message">If already registered, login at page's top</p>
+                    <button type="submit" className="btn btn-primary mr-2" disabled={!this.state.isValid} >sign up</button>
+                    <p class="message">If already registered, login at page's top</p>
 
-              </form>
-             
-            </div>
+                </form>
+                
+                </div>
           </div>
         );
     }

@@ -1,0 +1,24 @@
+.meetings-show-all-meetings {
+    background: orange; padding: 5px 5px 2px 5px;
+   
+     border-top-left-radius: 7px;
+     border-top-right-radius: 7px;
+
+    color: white;
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+}
+
+.meetings-add-meetings {
+    margin-left: 5px;
+
+    background: orange; padding: 5px 5px 2px 5px;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+
+   color: white;
+   font-size: 15px;
+   font-family: 'Roboto', sans-serif;
+   text-decoration: none;
+}

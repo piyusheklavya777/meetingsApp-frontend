@@ -1,0 +1,47 @@
+.add-meeting {
+
+    margin: 2% 20% auto;
+    padding:100px;
+
+    -webkit-box-shadow: 0px 0px 37px -7px rgba(0,0,0,0.61);
+    -moz-box-shadow: 0px 0px 37px -7px rgba(0,0,0,0.61);
+    box-shadow: 0px 0px 37px -7px rgba(0,0,0,0.61);
+
+
+}
+.input-description {
+    height: 100px
+}
+
+.input-title {
+    height: 30px;     
+}
+.input-any:focus {
+    outline: none;
+}
+.input-any {
+    border:none;
+    margin: 12px auto;
+    width: 500px;
+
+    color:rgb(255, 166, 0) ;
+    font-family: roboto;
+    font-size: 27px;
+
+    background: rgb(235, 235, 235);
+    border-bottom: 2px solid orange;
+}
+
+.pick-date-time {
+
+}
+
+.date-add, .time-add {
+    margin-right: 10px ;
+}
+
+.picker-label {
+    color:rgb(255, 166, 0) ;
+    font-family: roboto;
+    font-size: 17px;
+}

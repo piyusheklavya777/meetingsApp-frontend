@@ -1,0 +1,15 @@
+.calendar-header-text {
+    color: orange;
+    font-size: 30px;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+}
+
+.calendar-selectdate-btn {
+    margin: 10px auto;
+
+    height: 28px; width: 100px; background: rgb(255, 235, 169); color: white;
+
+    border:none; border-radius: 5px;
+
+}
