@@ -56,7 +56,12 @@ class Navbar extends Component {
                             <input type="button" className="nav-top-right-btn" onClick={loginHelper} value="login"/>
                         </React.Fragment>
                     }
+
                 </div>            
+
+               
+
+
             </div>     
          )
 
@@ -66,7 +71,6 @@ class Navbar extends Component {
                 <div>
                     {topNav}
                 </div>
-                                          
                 <div className="nav-bottom">
                     <ul className="nav-bottom-ul">
                         <li className="nav-bottom-li">
@@ -83,7 +87,8 @@ class Navbar extends Component {
                         </div>
             
                     </ul>
-                </div>
+                </div>                        
+                
             </div>
 
 
